@@ -24,7 +24,7 @@ Before running the project for the first time, install dependencies:
 
 dotnet restore
 
-### ** Run the Project
+### **Run the Project
 Start the project using:
 dotnet run
 
@@ -37,7 +37,7 @@ Application started. Press CTRL+C to shut down.
 Once the API is running, Swagger UI will be opened in your browser.
 Here, you can visually test all **JWT authentication operations!**
 
-## 🔑 Using JWT Authentication
+## **🔑 Using JWT Authentication**
 
 ### **1️⃣ Obtain a JWT Token**
 **📌 Use the POST /api/auth/login endpoint to log in and get a JWT token.**
