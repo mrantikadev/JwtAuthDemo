@@ -22,39 +22,54 @@ Make sure you have **.NET 8 SDK** installed. If not, you can download it here:
 
 Before running the project for the first time, install dependencies:
 
+```sh
 dotnet restore
+```
 
-### **Run the Project
+### **Run the Project**
 Start the project using:
+
+```sh
 dotnet run
+```
 
 **📌 If the API starts successfully, you should see an output like this:**
+
+```sh
 Now listening on: https://localhost:5000
 Now listening on: https://localhost:7000
 Application started. Press CTRL+C to shut down.
+```
 
 ### **3️⃣ Test the API with Swagger UI**
-Once the API is running, Swagger UI will be opened in your browser.
+Once the API is running, Swagger UI will be opened in your browser.\
 Here, you can visually test all **JWT authentication operations!**
 
 ## **🔑 Using JWT Authentication**
-
 ### **1️⃣ Obtain a JWT Token**
 **📌 Use the POST /api/auth/login endpoint to log in and get a JWT token.**
 **📝 Send this JSON:**
+
+```javascript
 {
   "username": "admin",
-  "password": "admin"
+  "password": "admin
 }
-These values **can be changed** in AuthController.cs
+```
 
+These values **can be changed** in AuthController.cs
 **✅ Successful Response:**
+
+```javascript
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR..."
 }
+```
+
 Copy the **token** from the response.
 
 ### **2️⃣ Use the JWT Token in Swagger**
+
 1. Click the 🔓 Authorize button in the top right corner of Swagger UI.
 2. Enter the token in this format:
 Bearer eyJhbGciOiJIUzI1NiIsInR...
@@ -62,36 +77,31 @@ Bearer eyJhbGciOiJIUzI1NiIsInR...
 **✅ Now you can access protected API endpoints!**
 
 ### **3️⃣ Access a Protected API Endpoint**
+
 Once authorized, you can test the **Admin-protected endpoints.**
+
 **📌 Example:** GET /api/secure/admin
 
 **✅ Successful Response:**
+
+```javascript
 "Only Admin can access to this page!"
+```
 
 **❌ Unauthorized Access (If no token is provided or it's invalid):**
+
+```javascript
 {
     "status": 401,
     "error": "Unauthorized"
 }
-
-## **📂 Project Structure**
-
-JwtAuthDemo/
-│── Controllers/
-│   ├── AuthController.cs      # Handles user authentication (JWT Token generation)
-│   ├── SecureController.cs    # Protected endpoints (Requires JWT Authentication)
-│── Services/
-│   ├── ITokenService.cs       # Token service interface
-│   ├── TokenService.cs        # Implements JWT Token creation
-│── appsettings.json           # JWT Secret Key Configuration
-│── Program.cs                 # JWT Authentication Middleware setup
-│── README.md                  # Project documentation
+```
 
 ## **🚀 Contributing**
 
-If you'd like to contribute:
-    Feel free to add new features or submit a pull request.
-    Report any issues or bugs by opening an Issue.
+If you'd like to contribute:\
+Feel free to add new features or submit a pull request.\
+Report any issues or bugs by opening an Issue.
 
-**✅If you like this project, don't forget to star it! ⭐**
+**✅If you like this project, don't forget to star it! ⭐**\
 **📧 For any questions, feel free to reach out via GitHub Issues. 😊**
